@@ -1,6 +1,6 @@
 <template>
   <section
-    class="cards min-w-sm max-w-xl lg:max-w-5xl p-5 mx-auto grid grid-cols-1 lg:grid-cols-3
+    class="cards max-w-sm lg:max-w-5xl p-5 mx-auto grid grid-cols-1 lg:grid-cols-3
       bg-white  rounded-md shadow-xl"
   >
     <InfoCard
@@ -56,3 +56,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.cards {
+  min-width: 16rem;
+}
+</style>
