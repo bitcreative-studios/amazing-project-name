@@ -12,7 +12,6 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "tailwindcss": "^1.2.0",
-    "typeface-barlow-condensed": "^0.0.71",
     "vue": "^2.6.11"
   },
   "devDependencies": {

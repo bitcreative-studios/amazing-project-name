@@ -10512,11 +10512,6 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-barlow-condensed@^0.0.71:
-  version "0.0.71"
-  resolved "https://registry.yarnpkg.com/typeface-barlow-condensed/-/typeface-barlow-condensed-0.0.71.tgz#7f78946ecd483cb2db5e3f9c2514a37d255ef667"
-  integrity sha512-0dKb79eoD462P40ec3C8sRkfzfMMDUrWIanR4A5+KDLGrjegspQFts/KYWPQCUHZVuBlZPD81q3wstNnc7I6Hg==
-
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"

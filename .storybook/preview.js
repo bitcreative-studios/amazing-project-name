@@ -1,4 +1,4 @@
-import "../stories/utils/tailwind.stories-styles.css"
+import "./utils/tailwind.stories-styles.css"
 import Vue from "vue"
 import { addDecorator, addParameters } from "@storybook/vue"
 
