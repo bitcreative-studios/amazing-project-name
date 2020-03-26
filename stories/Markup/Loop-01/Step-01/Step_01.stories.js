@@ -1,5 +1,3 @@
-import { linkTo } from "@storybook/addon-links"
-
 import Welcome from "./Welcome"
 import Markup from "./Solution"
 
@@ -8,10 +6,9 @@ export default {
   component: Welcome,
 }
 
-export const Design = () => ({
+export const Brief = () => ({
   components: { Welcome },
   template: '<welcome :showApp="action" />',
-  methods: { action: linkTo("Button") },
 })
 
 export const Solution = () => ({
@@ -19,5 +16,4 @@ export const Solution = () => ({
   template: `<div class="min-h-screen p-8 flex justify-center items-center bg-blue-400">
       <Markup :showApp="action"/>
   </div>`,
-  methods: { action: linkTo("Button") },
 })
