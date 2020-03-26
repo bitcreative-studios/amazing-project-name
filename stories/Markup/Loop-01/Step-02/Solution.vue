@@ -13,55 +13,44 @@
         payment method
       </h1>
     </div>
-    <div class="pl-5 py-5 flex">
-      <span><img class="h-8 mr-3" src="./img/visa.svg" alt=""/></span>
-      <span
-        class="text-md uppercase font-semibold
-       text-gray-500"
-        >visa</span
-      >
-      <span></span>
-    </div>
-    <div class="pl-5 pr-3 py-5 flex justify-between items-center">
-      <span class="flex"
-        ><span> <img class="h-8 mr-3" src="./img/mastercard.svg" alt=""/></span>
-        <span class="text-md uppercase font-semibold text-gray-800"
-          >mastercard</span
-        ></span
-      >
-      <span>
-        <svg
-          fill="#5AC550"
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-        </svg>
-      </span>
-    </div>
-    <div class="pl-5 py-5 flex">
-      <span><img class="h-8 mr-3" src="./img/maestro.svg" alt=""/></span>
-      <span
-        class="text-md uppercase font-semibold
-       text-gray-500"
-        >maestro</span
-      >
-      <span></span>
-    </div>
+    <CreditCardOption
+      v-for="creditCard in cardOptions"
+      :key="creditCard.name"
+      :card-logo="creditCard.cardLogo"
+      :name="creditCard.name"
+      :selected="creditCard.name === selected"
+      class="hover:bg-gray-100 transition duration-200"
+      @click="selected = creditCard.name"
+    />
     <button
       class="w-full py-4 uppercase text-center bg-blue-600
       focus:outline-none text-white font-semibold rounded-b"
     >
-      next step
+      {{ action }}
     </button>
   </div>
 </template>
 
 <script>
+import CreditCardOption from "./CreditCardOption"
 export default {
   name: "Solution",
+  components: { CreditCardOption },
+  props: {
+    cardOptions: {
+      type: Array,
+      required: true,
+    },
+    action: {
+      type: String,
+      default: "next step",
+    },
+  },
+  data() {
+    return {
+      selected: "mastercard",
+    }
+  },
 }
 </script>
 
