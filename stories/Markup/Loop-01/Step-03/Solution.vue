@@ -1,5 +1,5 @@
 <template>
-  <article class="bg-white rounded px-20 py-12">
+  <article class="invoice-component bg-white rounded px-20 py-12">
     <header class="mb-10">
       <div class="mb-4 flex justify-between items-center">
         <h2 class="text-2xl text-gray-900 font-semibold">SimpleWheels</h2>
@@ -47,6 +47,14 @@ export default {
 </script>
 
 <style scoped>
+.invoice-component {
+  --min-component-height: 500px;
+  min-height: var(--min-component-height);
+  background-image: url("./img/bicycle.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center calc(var(--min-component-height) * 0.45);
+}
 .orders > * + * {
   @apply mt-4;
 }
