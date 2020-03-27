@@ -30,7 +30,6 @@ export default {
 <style scoped>
 .avatar-root {
   @apply transition duration-150;
-  box-shadow: 0 0 0 1px transparent;
 }
 .avatar-root:hover {
   box-shadow: 0 0 0 5px #ededed;
