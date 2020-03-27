@@ -1,14 +1,14 @@
-import Welcome from "./Welcome"
+import Index from "./Index"
 import Markup from "./Solution"
 
 export default {
   title: `Markup/Loop-01/Step-01`,
-  component: Welcome,
+  component: Index,
 }
 
-export const Brief = () => ({
-  components: { Welcome },
-  template: '<welcome :showApp="action" />',
+export const Discussion = () => ({
+  components: { Index },
+  template: '<Index :showApp="action" />',
 })
 
 export const Solution = () => ({

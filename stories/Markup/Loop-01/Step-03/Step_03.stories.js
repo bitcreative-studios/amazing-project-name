@@ -1,4 +1,4 @@
-import Discussion from "./Discussion"
+import Index from "./Index"
 import Markup from "./Solution"
 
 export default {
@@ -6,9 +6,9 @@ export default {
   component: Markup,
 }
 
-export const Brief = () => ({
-  components: { Discussion },
-  template: `<Discussion/>`,
+export const Discussion = () => ({
+  components: { Index },
+  template: `<Index/>`,
 })
 
 export const Solution = () => ({

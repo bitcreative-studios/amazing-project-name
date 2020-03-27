@@ -1,4 +1,4 @@
-import Discussion from "./Discussion"
+import Index from "./Index"
 import Markup from "./Solution"
 import backgroundImage from "./img/background.jpg"
 
@@ -16,9 +16,9 @@ const solutionStyles = {
   backgroundSize: `cover`,
 }
 
-export const Brief = () => ({
-  components: { Discussion },
-  template: `<Discussion/>`,
+export const Discussion = () => ({
+  components: { Index },
+  template: `<Index/>`,
 })
 
 export const Solution = () => ({
