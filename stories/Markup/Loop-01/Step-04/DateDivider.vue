@@ -46,6 +46,6 @@ export default {
 
 <style scoped>
 .line-segment {
-  @apply inline-block border border-gray-300;
+  @apply inline-block border-t border-gray-400;
 }
 </style>

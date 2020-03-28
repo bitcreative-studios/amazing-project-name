@@ -32,4 +32,33 @@ export const day = timestamp => {
   return formattedDate === today ? "today" : formattedDate
 }
 
+const today = new Date()
+const currentYear = today.getFullYear()
+const currentMonth = today.getMonth()
+const currentDate = today.getDate()
+
+export const TIMESTAMP_01 = new Date(
+  currentYear,
+  currentMonth,
+  currentDate,
+  10,
+  53
+).getTime()
+
+export const TIMESTAMP_02 = new Date(
+  currentYear,
+  currentMonth,
+  currentDate,
+  10,
+  57
+).getTime()
+
+export const TIMESTAMP_03 = new Date(
+  currentYear,
+  currentMonth,
+  currentDate,
+  11,
+  3
+).getTime()
+
 export default { day, time }

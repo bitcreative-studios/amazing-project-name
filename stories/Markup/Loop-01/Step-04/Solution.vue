@@ -28,19 +28,40 @@
       </span>
     </header>
     <div class="p-4 flex flex-col items-center bg-white text-gray-800">
-      <div class="w-full scrollable">
-        <!-- TODO: object iteration for timestamps in this.conversations -->
+      <div class="w-full">
         <div
           v-for="(v, k) in conversations"
           :key="v.timestamp"
-          class="relative"
+          class="conversation flex flex-col"
         >
           <date-divider :date="k" />
-          <!-- TODO: array iteration for messages in conversation -->
+          <message
+            v-for="message in v.messages"
+            :key="message.timestamp"
+            :message="message"
+          />
         </div>
       </div>
-      <div>
-        <!-- TODO: form input for message -->
+      <div class="w-full border-t border-gray-400">
+        <form
+          @submit.prevent="noop"
+          class="pt-4 flex justify-between items-center"
+        >
+          <input
+            class="text-gray-900 placeholder-gray-800 focus:outline-none"
+            type="text"
+            name="message"
+            placeholder="Enter your message"
+            v-model="message"
+          />
+          <!-- TODO: form input for message -->
+          <button
+            type="submit"
+            class="uppercase font-bold tracking-wider text-blue-400"
+          >
+            send
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -49,10 +70,11 @@
 <script>
 import { time, day } from "./utils/date"
 import DateDivider from "./DateDivider"
+import Message from "./Message"
 
 export default {
   name: "Solution",
-  components: { DateDivider },
+  components: { Message, DateDivider },
   props: {
     conversations: {
       type: Object,
@@ -67,6 +89,14 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      message: null,
+    }
+  },
+  methods: {
+    noop: () => {},
+  },
   filters: {
     day,
     time,
@@ -79,23 +109,11 @@ export default {
   min-width: 25rem;
   @apply max-w-sm;
 }
+.conversation > * {
+  @apply mb-4;
+}
 .recipient .status {
   height: 6px;
   width: 6px;
-}
-.date-divider:before,
-.date-divider:after {
-  content: "";
-  @apply absolute w-5/12 border border-gray-300;
-}
-.date-divider:before {
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.date-divider:after {
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 </style>

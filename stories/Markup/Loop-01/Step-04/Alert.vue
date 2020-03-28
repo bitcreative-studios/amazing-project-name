@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 text-gray-800" :class="colors[type]">
+  <div class="alert" :class="colors[category]">
     {{ message }}
   </div>
 </template>
@@ -20,11 +20,17 @@ export default {
       type: Object,
       default() {
         return {
-          error: "bg-pink-200",
-          update: "bg-green-200",
+          error: "bg-pink-300",
+          update: "bg-green-300",
         }
       },
     },
   },
 }
 </script>
+
+<style scoped>
+.alert {
+  align-self: self-end;
+}
+</style>
