@@ -5,7 +5,7 @@
     v-if="message.type === 'message'"
   >
     <span class="mb-2 text-sm text-gray-500 font-semibold">
-      {{ message.timestamp | time }}
+      {{ message.timestamp | timeDate }}
     </span>
     <div
       class="message-text"
