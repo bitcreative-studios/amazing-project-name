@@ -1,6 +1,8 @@
 import Index from "./Index"
 import Markup from "./Solution"
 
+// FIXME: CHANGE THIS TITLE TO MATCH CURRENT STEP & LOOP
+// FIXME: CHANGE THIS FILE NAME (i.e., REMOVE THE *.sample.js)
 export default {
   title: `Markup/Loop-01/Step-xx`,
   component: Markup,
