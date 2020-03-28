@@ -83,6 +83,9 @@ export default {
   height: 6px;
   width: 6px;
 }
+.recipient:before {
+  content: "";
+}
 .date-divider:before,
 .date-divider:after {
   content: "";

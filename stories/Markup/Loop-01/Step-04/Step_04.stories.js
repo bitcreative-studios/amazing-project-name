@@ -45,13 +45,46 @@ export const Solution = () => ({
   components: { Markup },
   template: `<div class="min-h-screen flex justify-center 
     items-center" style="background: linear-gradient(#ebf8ff,#90cdf4);">
-      <Markup />
+      <Markup :conversations="conversations" :recipient="recipient" />
   </div>`,
   data() {
     return {
       recipient: "mark zuckerberg",
       conversations: {
         [timestamp01]: {
+          messages: [
+            {
+              message: "Hi, Mark! I made a new design for Messenger App.",
+              type: "message",
+              timestamp: timestamp01,
+              sender: "user",
+              category: null,
+            },
+            {
+              message:
+                "Yo! Send it to my assistant and we'll review it during the year.",
+              type: "message",
+              timestamp: timestamp02,
+              sender: "recipient",
+              category: null,
+            },
+            {
+              message: "But Mark...",
+              type: "message",
+              timestamp: timestamp03,
+              sender: "user",
+              category: null,
+            },
+            {
+              message: "You were blocked by the user",
+              type: "alert",
+              timestamp: timestamp03,
+              sender: null,
+              category: "error",
+            },
+          ],
+        },
+        [new Date(2020, 0, 25).getTime()]: {
           messages: [
             {
               message: "Hi, Mark! I made a new design for Messenger App.",
