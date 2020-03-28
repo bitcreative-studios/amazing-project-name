@@ -1,9 +1,13 @@
 <template>
   <div
     ref="divider"
-    class="divider relative text-center uppercase text-gray-400 font-semibold"
+    class="divider flex items-center text-center uppercase text-gray-400 font-semibold"
   >
-    <span ref="date" class="date px-1">{{ date | day }}</span>
+    <span class="before line-segment" :style="{ width: segmentWidth }"></span>
+    <span ref="date" class="date px-2 whitespace-no-wrap">{{
+      date | day
+    }}</span>
+    <span class="after line-segment" :style="{ width: segmentWidth }"></span>
   </div>
 </template>
 
@@ -18,6 +22,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      segmentWidth: null,
+    }
+  },
   mounted() {
     const { width: textWidth } = this.$refs.date.getBoundingClientRect()
     const { width: containerWidth } = this.$refs.divider.getBoundingClientRect()
@@ -27,10 +36,7 @@ export default {
       .replace(/px/, "")
       .trim()
     const width = (containerWidth - (textWidth + textPadding)) / 2
-    // const computedStyles = window.getComputedStyle(
-    //   this.$refs.divider,
-    //   ":before"
-    // )
+    this.segmentWidth = `${width}px`
   },
   filters: {
     day,
@@ -39,20 +45,7 @@ export default {
 </script>
 
 <style scoped>
-.divider:before,
-.divider:after {
-  content: "";
-  @apply absolute w-5/12 border border-gray-300;
-}
-.divider:before,
-.divider:after {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.divider:before {
-  left: 0;
-}
-.divider:after {
-  right: 0;
+.line-segment {
+  @apply inline-block border border-gray-300;
 }
 </style>

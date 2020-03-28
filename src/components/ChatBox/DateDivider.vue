@@ -35,7 +35,7 @@ export default {
       .getPropertyValue("padding-left")
       .replace(/px/, "")
       .trim()
-    const width = (containerWidth - (textWidth + textPadding)) / 2
+    const width = (containerWidth - (textWidth + parseInt(textPadding) * 2)) / 2
     this.segmentWidth = `${width}px`
   },
   filters: {
